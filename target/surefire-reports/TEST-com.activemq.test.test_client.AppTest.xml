@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.activemq.test.test_client.AppTest" time="0.398" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Timothy Sam\eclipse-workspace\test-client\target\test-classes;C:\Users\Timothy Sam\eclipse-workspace\test-client\target\classes;C:\Users\Timothy Sam\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Timothy Sam\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\activemq\activemq-core\5.7.0\activemq-core-5.7.0.jar;C:\Users\Timothy Sam\.m2\repository\org\slf4j\slf4j-api\1.6.6\slf4j-api-1.6.6.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\activemq\kahadb\5.7.0\kahadb-5.7.0.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\activemq\protobuf\activemq-protobuf\1.1\activemq-protobuf-1.1.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\mqtt-client\mqtt-client\1.3\mqtt-client-1.3.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\hawtdispatch\hawtdispatch-transport\1.11\hawtdispatch-transport-1.11.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\hawtdispatch\hawtdispatch\1.11\hawtdispatch-1.11.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\hawtbuf\hawtbuf\1.9\hawtbuf-1.9.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-context\3.0.7.RELEASE\spring-context-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-aop\3.0.7.RELEASE\spring-aop-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-beans\3.0.7.RELEASE\spring-beans-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-core\3.0.7.RELEASE\spring-core-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-expression\3.0.7.RELEASE\spring-expression-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-asm\3.0.7.RELEASE\spring-asm-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\commons-net\commons-net\3.1\commons-net-3.1.jar;C:\Users\Timothy Sam\.m2\repository\org\jasypt\jasypt\1.9.0\jasypt-1.9.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Users\Timothy Sam\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\TIMOTH~1\AppData\Local\Temp\surefire3738813942813855156\surefirebooter11092767839630625176.jar C:\Users\Timothy Sam\AppData\Local\Temp\surefire3738813942813855156 2021-02-18T15-20-40_750-jvmRun1 surefire5935847126031223859tmp surefire_011718365243163579792tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Timothy Sam\eclipse-workspace\test-client\target\test-classes;C:\Users\Timothy Sam\eclipse-workspace\test-client\target\classes;C:\Users\Timothy Sam\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Timothy Sam\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\activemq\activemq-core\5.7.0\activemq-core-5.7.0.jar;C:\Users\Timothy Sam\.m2\repository\org\slf4j\slf4j-api\1.6.6\slf4j-api-1.6.6.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\geronimo\specs\geronimo-jms_1.1_spec\1.1.1\geronimo-jms_1.1_spec-1.1.1.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\activemq\kahadb\5.7.0\kahadb-5.7.0.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\activemq\protobuf\activemq-protobuf\1.1\activemq-protobuf-1.1.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\mqtt-client\mqtt-client\1.3\mqtt-client-1.3.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\hawtdispatch\hawtdispatch-transport\1.11\hawtdispatch-transport-1.11.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\hawtdispatch\hawtdispatch\1.11\hawtdispatch-1.11.jar;C:\Users\Timothy Sam\.m2\repository\org\fusesource\hawtbuf\hawtbuf\1.9\hawtbuf-1.9.jar;C:\Users\Timothy Sam\.m2\repository\org\apache\geronimo\specs\geronimo-j2ee-management_1.1_spec\1.0.1\geronimo-j2ee-management_1.1_spec-1.0.1.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-context\3.0.7.RELEASE\spring-context-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-aop\3.0.7.RELEASE\spring-aop-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-beans\3.0.7.RELEASE\spring-beans-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-core\3.0.7.RELEASE\spring-core-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-expression\3.0.7.RELEASE\spring-expression-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\org\springframework\spring-asm\3.0.7.RELEASE\spring-asm-3.0.7.RELEASE.jar;C:\Users\Timothy Sam\.m2\repository\commons-net\commons-net\3.1\commons-net-3.1.jar;C:\Users\Timothy Sam\.m2\repository\org\jasypt\jasypt\1.9.0\jasypt-1.9.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Timothy Sam"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-01-19"/>
+    <property name="java.home" value="C:\Users\Timothy Sam\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Timothy Sam\eclipse-workspace\test-client"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\TIMOTH~1\AppData\Local\Temp\surefire3738813942813855156\surefirebooter11092767839630625176.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="15.0.2+7-27"/>
+    <property name="user.name" value="Timothy Sam"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Timothy Sam\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\TIMOTH~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="15.0.2"/>
+    <property name="user.dir" value="C:\Users\Timothy Sam\eclipse-workspace\test-client"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\Timothy Sam\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/Timothy Sam/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin/server;C:/Users/Timothy Sam/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Timothy Sam\AppData\Local\Microsoft\WindowsApps;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files\PuTTY\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\WireGuard\;C:\Program Files\Git\cmd;C:\Users\Timothy Sam\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Timothy Sam\AppData\Local\Programs\Python\Python39\;C:\Users\Timothy Sam\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Timothy Sam\.dotnet\tools;C:\Users\Timothy Sam\AppData\Local\GitHubDesktop\bin;C:\WINDOWS\system32;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15.0.2+7-27"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="59.0"/>
+  </properties>
+  <testcase name="shouldAnswerWithTrue" classname="com.activemq.test.test_client.AppTest" time="0.35"/>
+</testsuite>

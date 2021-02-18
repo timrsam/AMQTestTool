@@ -1,6 +1,6 @@
 package com.activemq.test.test_client;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -12,9 +12,10 @@ public class AppTest
     /**
      * Rigorous Test :-)
      */
+		
     @Test
-    public void shouldAnswerWithTrue()
+    public void shouldAnswerWithTrue() throws Exception
     {
-        assertTrue( true );
+    	assertEquals(Handler.mainTester(true), 0);
     }
 }
