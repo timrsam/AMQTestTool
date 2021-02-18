@@ -27,12 +27,14 @@ public class Handler {
 	  public static void main(String[] args) {
 		  try {
 			  
-			  if (args[0].equals("pub")) {
+			  if (args[0].toLowerCase().equals("pub")) {
 				  int val = mainTester(true);
 				  System.out.println(val);
-			  } else {
+			  } else if (args[0].toLowerCase().equals("sub")) {
 				  int val = mainTester(false);
 				  System.out.println(val);
+			  } else {
+				  System.out.println("Invalid Input! Exiting.");
 			  }
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
