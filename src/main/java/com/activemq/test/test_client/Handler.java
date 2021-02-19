@@ -1,9 +1,17 @@
 package com.activemq.test.test_client;
 
+import java.io.FileInputStream;
+import java.util.Properties;
+
 public class Handler {
 	  public static int mainTester(boolean choice) throws Exception {
 		  
-		  String msg = "Hello World";
+		  //String msg = "Hello World";
+		  Properties config;
+		  config = new Properties();
+		  FileInputStream fis = new FileInputStream("C:\\Users\\Timothy Sam\\eclipse-workspace\\test-client\\src\\test\\resources\\config.properties");
+		  config.load(fis);
+		  String msg = config.getProperty("message");
 		  
 		  System.out.println(msg);
 		  try {
@@ -26,6 +34,7 @@ public class Handler {
 	  }
 	  public static void main(String[] args) {
 		  try {
+
 			  
 			  if (args[0].toLowerCase().equals("pub")) {
 				  int val = mainTester(true);
