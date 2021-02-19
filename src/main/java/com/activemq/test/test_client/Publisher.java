@@ -19,12 +19,13 @@ public class Publisher {
 	private String password;
 	private String broker;
 		
-	public Publisher() {
+	public Publisher(String path) {
 		def = "Default Message";
 		config = new Properties();
 		try {
 			
-			FileInputStream fis = new FileInputStream("C:\\Users\\Timothy Sam\\eclipse-workspace\\test-client\\src\\test\\resources\\config.properties");
+			//FileInputStream fis = new FileInputStream("C:\\Users\\Timothy Sam\\eclipse-workspace\\test-client\\src\\test\\resources\\config.properties");
+			FileInputStream fis = new FileInputStream(path);
 			config.load(fis);
 			userName = config.getProperty("user");
 			password = config.getProperty("password");
