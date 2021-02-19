@@ -1,5 +1,6 @@
 package com.activemq.test.test_client;
 
+import java.io.Console;
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -52,8 +53,15 @@ public class Publisher {
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		Topic topic = session.createTopic("World");
 		MessageProducer producer = session.createProducer(topic);
-		TextMessage textMessage = session.createTextMessage(message);
-		producer.send(textMessage);
+		
+		//User Text
+		Console console = System.console();
+		while (!message.equals("n") || !message.equals("N")) {
+			System.out.print("MESSAGE? (n/N to quit): ");
+			message = console.readLine();
+			TextMessage textMessage = session.createTextMessage(message);
+			producer.send(textMessage);
+		}
 		connection.stop();
 		
 	}
