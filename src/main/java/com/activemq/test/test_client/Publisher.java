@@ -1,5 +1,7 @@
 package com.activemq.test.test_client;
 
+
+
 //import java.io.Console;
 //import java.io.FileInputStream;
 //import java.util.Properties;
@@ -9,7 +11,13 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.jms.Topic;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.ActiveMQSslConnectionFactory;
 
 public class Publisher implements Runnable{
 
@@ -35,8 +43,10 @@ public class Publisher implements Runnable{
 			password = Handler.mode.getProperty("password");
 			def = Handler.mode.getProperty("defaultmsg");
 			//broker = config.getProperty("brokerURL");
-			broker = "tcp://" + brok + ":61616";
+			//broker = "tcp://" + brok + ":61616";
+			broker = "ssl://" + brok + ":61616";
 			topicName = top;
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -47,10 +57,36 @@ public class Publisher implements Runnable{
 	//Initiate Connection
 	public void connect() throws Exception {
 		//connectionFactory.setBrokerURL("tcp://10.32.0.9:61616");
+		TrustManager[] trustAllCerts = new TrustManager[]{
+				new X509TrustManager() {
+					public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+						return null;
+					}
+					public void checkClientTrusted(
+							java.security.cert.X509Certificate[] certs, String authType) {
+					}
+					public void checkServerTrusted(
+							java.security.cert.X509Certificate[] certs, String authType) {
+					}
+				}
+		};
+
+		try {
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, trustAllCerts, new java.security.SecureRandom());
+			//TODO
+			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+		} catch (Exception e) {
+		}
+		
 		System.out.println("USER: " + userName);
 		System.out.println("PASSWORD: " + password);
 		System.out.println("BROKER: " + broker);
-		connectionFactory = new ActiveMQConnectionFactory(userName, password, broker);
+		//connectionFactory = new ActiveMQConnectionFactory(userName, password, broker);
+		connectionFactory = new ActiveMQSslConnectionFactory(broker);
+		connectionFactory.setUserName(userName);
+		connectionFactory.setPassword(password);
+		
 		connection = connectionFactory.createConnection();
 		connection.start();
 		session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
