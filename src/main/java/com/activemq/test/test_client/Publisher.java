@@ -83,10 +83,10 @@ public class Publisher implements Runnable{
 		try {
 			//Connect to the broker
 			this.connect();
+			System.out.print("MESSAGE? (n/N to quit): ");
 			
 			do {
 				//Capture and submit Message
-				System.out.print("MESSAGE? (n/N to quit): ");
 				message = System.console().readLine();
 				this.submit(message);
 	

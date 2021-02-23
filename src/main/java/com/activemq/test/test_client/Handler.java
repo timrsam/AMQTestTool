@@ -115,7 +115,7 @@ public class Handler {
 				}
 
 			} else if (args[0].toLowerCase().equals("pub")) {
-				int val = amqSimple(false);
+				int val = amqSimple(true);
 				System.out.println(val);
 			} else if (args[0].toLowerCase().equals("sub")) {
 				int val = amqSimple(false);
@@ -151,16 +151,29 @@ public class Handler {
 				for (String brok : brokers) {
 					for (String top : topics) {
 						Publisher pub = new Publisher(brok, top);
+						pub.connect();
 						pub.submit();
+						pub.disconnect();
 					}
 				}
 			} else {
+				Subscriber[] subList = new Subscriber[brokers.length * topics.length];
+				int ctr = 0;
 				for (String brok : brokers) {
 					for (String top : topics) {
-						Subscriber sub = new Subscriber(brok, top);
-						sub.recieve();
+						subList[ctr] = new Subscriber(brok, top);
+						Thread rcvThd = new Thread(subList[ctr]);
+						subList[ctr].format(true);
+						rcvThd.start();
+						ctr ++;
 					}
-				}				
+				}
+				System.out.print(ctr + " Listeners Started. Press Enter to stop listening");
+				System.in.read();
+				for (int i=0; i <= subList.length - 1; i++) {
+					subList[i].stopThread = true;
+					System.out.println(subList[i].ID + " stopped.");
+				}
 			}
 		}
 		catch (Exception e) {

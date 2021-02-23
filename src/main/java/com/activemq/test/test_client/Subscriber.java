@@ -13,7 +13,7 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class Subscriber implements Runnable, MessageListener {
+public class Subscriber implements Runnable {
 
 	ActiveMQConnectionFactory connFactory;
 	String rcvMsg;
@@ -24,6 +24,8 @@ public class Subscriber implements Runnable, MessageListener {
 	private String topicName;
 	public boolean stopThread;
 	Connection connection;
+	public String ID;
+	public boolean auto;
 	
 	public Subscriber(String brok, String top) {
 		//config = new Properties();
@@ -38,6 +40,7 @@ public class Subscriber implements Runnable, MessageListener {
 			broker = "tcp://" + brok + ":61616";
 			topicName = top;
 			stopThread = false;
+			auto = false;
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -55,37 +58,51 @@ public class Subscriber implements Runnable, MessageListener {
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		Destination topic = session.createTopic(topicName);
 		MessageConsumer consumer = session.createConsumer(topic);
+		ID = connection.getClientID();
+		MessageListener listner = new MessageListener() {
+			public void onMessage(Message message) {
+				try {
+					if (message instanceof TextMessage) {
+						TextMessage textMessage = (TextMessage) message;
+						if (auto) {
+							System.out.println("FROM " + broker + " : RECIEVED BY " + ID); 
+							System.out.println(textMessage.getText());
+						} else {
+							System.out.println("BROKER " + broker + ": " + textMessage.getText());
+						}
+					}
+				} catch (JMSException e) {
+					System.out.println("Caught:" + e);
+				}
+				}
+		};
+		
 		//TODO Need to fix listner and onMessage method.
-		consumer.setMessageListener(this);
+		consumer.setMessageListener(listner);
 	}
 	
 	public void close() throws Exception {
 		connection.close();
 	}
 	
+	public void format(boolean format) {
+		auto = format;
+	}
 	//Allows multi-threading of listener
 	public void run() {
 		
 		try {
+			
+			this.recieve();
+			
 			while(!stopThread) {
 				//Do nothing until calling thread says stop.
+				
 			}
 			this.close();
 		} catch (Exception e) {
 			
 		}
 	}
-	
-	//Implements the onMessage method of the listener
-	public void onMessage(Message message) {
-		try {
-			if (message instanceof TextMessage) {
-				TextMessage textMessage = (TextMessage) message;
-				System.out.println("BROKER: " + broker + textMessage.getText());
-			}
-		} catch (JMSException e) {
-			System.out.println("Caught:" + e);
-		}
-		}
 	
 }
