@@ -1,7 +1,6 @@
 package com.activemq.test.test_client;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -124,7 +123,7 @@ public class Handler {
 				System.out.println("Invalid Arguments! Starting Interactive Configurator.");
 				//TODO invoke interactive();
 			}
-			
+			myInput.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
