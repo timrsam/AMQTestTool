@@ -28,10 +28,10 @@ public class Handler {
 		//Assign resource location based on OS
 		if (OS.indexOf("win") >= 0) {
 			//Path in Windows Form
-			path = temp +"\\resources\\";
+			path = temp + "\\resources\\";
 		} else {
 			//Path in Linux Form
-			path = "//resources//";
+			path = temp + "//resources//";
 		}
 
 		//Load properties files
