@@ -37,7 +37,7 @@ public class Subscriber implements Runnable {
 			userName = Handler.mode.getProperty("user");
 			password = Handler.mode.getProperty("password");
 			//broker = config.getProperty("brokerURL");
-			broker = "tcp://" + brok + ":61616";
+			broker = "tcp://" + brok + ":" + Handler.mode.getProperty("port");
 			topicName = top;
 			stopThread = false;
 			auto = false;

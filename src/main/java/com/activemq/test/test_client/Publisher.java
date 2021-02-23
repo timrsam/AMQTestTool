@@ -35,7 +35,7 @@ public class Publisher implements Runnable{
 			password = Handler.mode.getProperty("password");
 			def = Handler.mode.getProperty("defaultmsg");
 			//broker = config.getProperty("brokerURL");
-			broker = "tcp://" + brok + ":61616";
+			broker = "tcp://" + brok + ":" + Handler.mode.getProperty("port");
 			topicName = top;
 			
 		} catch (Exception e) {
